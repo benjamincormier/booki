@@ -48,8 +48,8 @@ li {
 /**********************************************************************/
 
 .container {
-  padding: 0 7.2rem;
-  max-width: 140rem;
+  padding: 0 5rem; /* 1400px - 2x30px = 1340px pour le contenu */
+  max-width: 144rem;
   margin: 0 auto;
 }
 
@@ -92,8 +92,7 @@ li {
 /* Main */
 
 .offers-container--main {
-  width: 65%;
-  /* flex: 0 0 60%; */
+  width: 66%;
   margin-right: 4rem;
 }
 
@@ -137,6 +136,10 @@ li {
 * ACTIVITIES *
 *************/
 
+.section-activities {
+  margin-bottom: 6rem;
+}
+
 .activities-overview {
   display: flex;
   justify-content: space-between;
@@ -152,8 +155,8 @@ li {
   background-color: var(--light-grey-1);
 }
 
-.footer div:not(:last-child) {
-  margin-right: 25rem;
+.footer > div {
+  width: 33%;
 }
 
 .footer h3 {
@@ -253,14 +256,20 @@ li {
   margin-bottom: 5rem;
 }
 
-.filters__list {
-  display: flex;
-  flex-wrap: wrap;
+.filters__bar > h4 {
+  margin-right: 3.5rem;
 }
 
-.filters__list > li {
-  margin-left: 4rem;
+.filters__list {
+  display: flex;
+  justify-content: space-between;
+  flex-wrap: wrap;
+  width: 86rem;
 }
+
+/* .filters__list > li {
+  margin-left: 4rem;
+} */
 
 .search__filter {
   background-color: #fff;
@@ -362,6 +371,10 @@ li {
   display: flex;
 }
 
+.card-sponsored .card__title {
+  max-width: 16.9rem;
+}
+
 .card-sponsored__image {
   padding: 5px 0 5px 5px;
   width: 13.7rem;
@@ -373,7 +386,7 @@ li {
 .card-sponsored__details {
   display: flex;
   flex-direction: column;
-  padding: 1rem 1.5rem;
+  padding: 1.6rem 2.2rem 1.2rem 1.5rem;
 }
 
 .icon-grey {
@@ -433,7 +446,11 @@ li {
 
 @media (max-width: 62em) {
   html {
-    font-size: 50%;
+    /* font-size: 50%; */
+  }
+
+  .container {
+    padding: 0 7.2rem;
   }
 
   .section-offers {
