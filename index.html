@@ -42,7 +42,6 @@
           </ul>
         </nav>
       </header>
-
       <main>
         <section class="section-search">
           <h1 class="section-title">
@@ -51,7 +50,7 @@
           <h3 class="section-subtitle">
             En plein centre-ville ou en pleine nature
           </h3>
-          <form action="#" id="search">
+          <form action="#" class="search">
             <div class="search__position">
               <i class="fa-solid fa-location-dot"></i>
             </div>
@@ -60,7 +59,12 @@
               class="search__input"
               placeholder="Marseille, France"
             />
-            <button class="search__button button">Rechercher</button>
+            <button class="search__button button search__button--desktop">
+              Rechercher
+            </button>
+            <button class="search__button button search__button--mobile">
+              <i class="fa-solid fa-magnifying-glass"></i>
+            </button>
           </form>
           <div class="filters__bar">
             <h4>Filtres</h4>
@@ -217,7 +221,7 @@
                 </div>
               </div>
 
-              <button class="show-more-btn"><h3>Afficher plus</h3></button>
+              <button class="show-more-btn">Afficher plus</button>
             </div>
           </div>
           <div class="offers-container offers-container--sponsored">
@@ -267,7 +271,7 @@
               <div class="card card-sponsored">
                 <img
                   class="card-sponsored__image"
-                  src="/images/hebergements/4_small/nicate-lee-kT-ZyaiwBe0-unsplash.jpg"
+                  src="/images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg"
                   alt="Hôtel Bleu et Blanc"
                 />
                 <div class="card-sponsored__details">

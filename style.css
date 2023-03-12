@@ -48,9 +48,17 @@ li {
 /**********************************************************************/
 
 .container {
-  padding: 0 5rem; /* 1400px - 2x30px = 1340px pour le contenu */
-  max-width: 144rem;
+  max-width: 144rem; /* 1440px - 2x50px = 1340px pour le contenu */
   margin: 0 auto;
+}
+
+/* le padding est mis sur tous les éléments suivants car sur les petits écrans, l'une des sections doit occuper toute la largeur de l'écran */
+.header,
+.section-search,
+.section-offers,
+.section-activities,
+.footer {
+  padding: 0 5rem;
 }
 
 /*********
@@ -97,7 +105,7 @@ li {
 }
 
 .offers-container--sponsored {
-  flex: auto;
+  /* flex: auto; */
   position: relative;
 }
 
@@ -113,10 +121,12 @@ li {
   background-color: inherit;
   cursor: pointer;
   transition: background-color 0.2s ease;
+  font-weight: 700;
+  font: 1.8rem;
 }
 
 .show-more-btn:hover {
-  color: red;
+  text-decoration: underline;
 }
 
 /* Sponsored */
@@ -195,10 +205,10 @@ li {
   cursor: pointer; /*à transformer en button plutôt que de remettre cette property ? */
 }
 
-.nav__item:hover {
+/* .nav__item:hover {
   color: var(--booki-blue);
   border-top: 2px solid var(--booki-blue);
-}
+} */
 
 .nav__link:link,
 .nav__link:visited {
@@ -210,7 +220,7 @@ li {
 * SEARCH BAR *
 *************/
 
-#search {
+.search {
   display: flex;
   /* border: 1px solid var(--light-grey-1); */
   /* border-radius: 10px; */
@@ -219,7 +229,7 @@ li {
   margin-bottom: 3rem;
 }
 
-#search > * {
+.search > * {
   /* sélectionne la div avec le pin, l'input et le bouton 'Rechercher' */
   padding: 1.4rem 1.6rem;
   font-size: inherit;
@@ -244,6 +254,10 @@ li {
   border: 1px solid var(--booki-blue);
 }
 
+.search__button--mobile {
+  display: none;
+}
+
 /**********
 * FILTERS *
 **********/
@@ -263,13 +277,9 @@ li {
 .filters__list {
   display: flex;
   justify-content: space-between;
-  flex-wrap: wrap;
+  gap: 2rem;
   width: 86rem;
 }
-
-/* .filters__list > li {
-  margin-left: 4rem;
-} */
 
 .search__filter {
   background-color: #fff;
@@ -280,6 +290,7 @@ li {
   font-weight: inherit;
   display: flex;
   align-items: center;
+  height: 5rem;
 }
 
 .search__filter > i {
@@ -396,12 +407,18 @@ li {
 /**********************************************************************/
 /* TYPOGRAPHY */
 /**********************************************************************/
+
+h1.section-title {
+  margin-bottom: 1.2rem;
+}
+
 .section-title {
   font-weight: 700;
   font-size: 2.2rem;
-  margin-bottom: 1.2rem;
+  margin-bottom: 2.5rem;
   color: #000;
 }
+
 .section-subtitle {
   margin-bottom: 2rem;
   font-weight: 400;
@@ -446,23 +463,47 @@ li {
 
 @media (max-width: 62em) {
   html {
-    /* font-size: 50%; */
+    font-size: 56%;
   }
 
-  .container {
-    padding: 0 7.2rem;
+  .filters__bar > h4 {
+    margin-right: 2rem;
   }
 
   .section-offers {
     flex-direction: column;
   }
 
-  .offers-container--main {
-    width: 100%;
+  .offers-container {
+    padding: 2.8rem 3.8rem;
   }
 
+  .offers-container--main {
+    width: 100%;
+    margin-bottom: 5.3rem;
+  }
+
+  .offers-container--sponsored > i {
+    top: 3.6rem;
+    right: 4.2rem;
+  }
+
+  /* Le container contenant les cards "sponsored" passe en row et la largeur des cards passe en % */
   .offers-sponsored-overview {
     flex-direction: row;
+    justify-content: space-between;
+  }
+
+  .card-sponsored {
+    width: 32%;
+  }
+
+  .card-sponsored__image {
+    width: 42%;
+  }
+
+  .activities-card__image {
+    height: 23rem;
   }
 }
 
@@ -471,7 +512,151 @@ li {
 *************************/
 
 @media (max-width: 48em) {
-  body {
-    background-color: blue;
+  html {
+    font-size: 62.5%;
+  }
+
+  .header,
+  .section-search,
+  .section-activities {
+    padding: 0 2rem;
+  }
+
+  .container,
+  .section-offers {
+    padding: 0;
+  }
+
+  /* Header */
+
+  .header {
+    padding: 2rem 0 0 0;
+    flex-direction: column;
+  }
+
+  .nav {
+    width: 100%;
+  }
+
+  .nav__item {
+    padding: 3rem 3.5rem;
+    width: 50%;
+    text-align: center;
+  }
+
+  /* Search */
+
+  .search {
+    justify-content: center;
+  }
+
+  .search__button--desktop {
+    display: none;
+  }
+
+  .search__button--mobile {
+    display: block;
+  }
+
+  .search__input {
+    /* empêche que la barre de saisie dépasse sur tous petits écrans, et max-width permet d'avoir au max la même taille que sur desktop */
+    width: 100%;
+    max-width: 22.4rem;
+  }
+
+  /* Filters */
+
+  .filters__bar {
+    flex-wrap: wrap;
+  }
+
+  .filters__bar > h4 {
+    margin-bottom: 1.5rem;
+  }
+
+  .filters__list {
+    /* passage en grid pour meilleur contrôles des gaps par rapport à flex-wrap */
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    row-gap: 1.7rem;
+    column-gap: 1.4rem;
+  }
+
+  .search__filter {
+    font-size: 1.1rem;
+    width: 100%;
+    justify-content: start;
+  }
+
+  .search__filter > span {
+    margin-left: 0.4rem;
+  }
+
+  /* Offers */
+
+  .offers-container {
+    padding: 2.8rem 2rem 4.7rem 2rem;
+    border-radius: 0;
+  }
+
+  .offers-container--sponsored {
+    order: -1;
+    margin-bottom: 0rem;
+  }
+
+  .offers-sponsored-overview {
+    flex-direction: column;
+  }
+
+  .card {
+    /* Toutes les cards doivent maintenant occuper 100% de l'espace dispo */
+    width: 100%;
+  }
+
+  .offers-container--sponsored > i {
+    top: 2.5rem;
+    right: 3rem;
+  }
+
+  .card-sponsored__image {
+    height: 14.4rem;
+  }
+
+  .offers-container--main {
+    width: 100%;
+    background-color: #fff;
+    margin-bottom: 0;
+  }
+
+  .offers-main-overview {
+    flex-direction: column;
+  }
+
+  .show-more-btn {
+    display: none;
+  }
+
+  /* Activities */
+  .activities-overview {
+    flex-direction: column;
+  }
+
+  .activities-card__image {
+    height: 13.4rem;
+  }
+
+  /* Footer */
+  .footer {
+    padding-left: 2rem;
+    padding-right: 2rem;
+    flex-direction: column;
+  }
+
+  .footer > div {
+    width: 100%;
+  }
+
+  .footer > div:not(:last-child) {
+    margin-bottom: 5rem;
   }
 }
