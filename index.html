@@ -58,6 +58,7 @@
               type="text"
               class="search__input"
               placeholder="Marseille, France"
+              autofocus
             />
             <button class="search__button button search__button--desktop">
               Rechercher
@@ -88,7 +89,7 @@
                 </button>
               </li>
               <li>
-                <button class="search__filter search__filter--active button">
+                <button class="search__filter button">
                   <i class="fa-solid fa-dog icon-blue"></i
                   ><span>Animaux autorisés</span>
                 </button>
@@ -115,7 +116,7 @@
                 />
                 <div class="card-main__details">
                   <h3 class="card__title">Auberge La Canebière</h3>
-                  <h4 class="card__price">Nuit à partir de 25€</h4>
+                  <p class="card__price">Nuit à partir de 25€</p>
                   <div class="card__rating">
                     <i class="fa-solid fa-star icon-blue"></i>
                     <i class="fa-solid fa-star icon-blue"></i>
@@ -134,7 +135,7 @@
                 />
                 <div class="card-main__details">
                   <h3 class="card__title">Hôtel du port</h3>
-                  <h4 class="card__price">Nuit à partir de 52€</h4>
+                  <p class="card__price">Nuit à partir de 52€</p>
                   <div class="card__rating">
                     <i class="fa-solid fa-star icon-blue"></i>
                     <i class="fa-solid fa-star icon-blue"></i>
@@ -153,7 +154,7 @@
                 />
                 <div class="card-main__details">
                   <h3 class="card__title">Hôtel Les mouettes</h3>
-                  <h4 class="card__price">Nuit à partir de 76€</h4>
+                  <p class="card__price">Nuit à partir de 76€</p>
                   <div class="card__rating">
                     <i class="fa-solid fa-star icon-blue"></i>
                     <i class="fa-solid fa-star icon-blue"></i>
@@ -172,7 +173,7 @@
                 />
                 <div class="card-main__details">
                   <h3 class="card__title">Hôtel de la mer</h3>
-                  <h4 class="card__price">Nuit à partir de 46€</h4>
+                  <p class="card__price">Nuit à partir de 46€</p>
                   <div class="card__rating">
                     <i class="fa-solid fa-star icon-blue"></i>
                     <i class="fa-solid fa-star icon-blue"></i>
@@ -191,7 +192,7 @@
                 />
                 <div class="card-main__details">
                   <h3 class="card__title">Auberge Le Panier</h3>
-                  <h4 class="card__price">Nuit à partir de 23€</h4>
+                  <p class="card__price">Nuit à partir de 23€</p>
                   <div class="card__rating">
                     <i class="fa-solid fa-star icon-blue"></i>
                     <i class="fa-solid fa-star icon-blue"></i>
@@ -210,7 +211,7 @@
                 />
                 <div class="card-main__details">
                   <h3 class="card__title">Hôtel Chez Amina</h3>
-                  <h4 class="card__price">Nuit à partir de 96€</h4>
+                  <p class="card__price">Nuit à partir de 96€</p>
                   <div class="card__rating">
                     <i class="fa-solid fa-star icon-blue"></i>
                     <i class="fa-solid fa-star icon-blue"></i>
@@ -236,7 +237,7 @@
                 />
                 <div class="card-sponsored__details">
                   <h3 class="card__title">Hôtel Le soleil du matin</h3>
-                  <h4 class="card__price">Nuit à partir de 128€</h4>
+                  <p class="card__price">Nuit à partir de 128€</p>
                   <div class="u-mg-bottom-auto">&nbsp;</div>
                   <div class="card__rating">
                     <i class="fa-solid fa-star icon-blue"></i>
@@ -256,7 +257,7 @@
                 />
                 <div class="card-sponsored__details">
                   <h3 class="card__title">Chambres d’hôtes Au cœur de l’eau</h3>
-                  <h4 class="card__price">Nuit à partir de 71€</h4>
+                  <p class="card__price">Nuit à partir de 71€</p>
                   <div class="u-mg-bottom-auto">&nbsp;</div>
                   <div class="card__rating">
                     <i class="fa-solid fa-star icon-blue"></i>
@@ -271,12 +272,12 @@
               <div class="card card-sponsored">
                 <img
                   class="card-sponsored__image"
-                  src="/images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash.jpg"
+                  src="/images/hebergements/4_small/febrian-zakaria-sjvU0THccQA-unsplash-v2.jpg"
                   alt="Hôtel Bleu et Blanc"
                 />
                 <div class="card-sponsored__details">
                   <h3 class="card__title">Hôtel Bleu et Blanc</h3>
-                  <h4 class="card__price">Nuit à partir de 68€</h4>
+                  <p class="card__price">Nuit à partir de 68€</p>
                   <div class="u-mg-bottom-auto">&nbsp;</div>
                   <div class="card__rating">
                     <i class="fa-solid fa-star icon-blue"></i>
@@ -334,24 +335,24 @@
       <footer class="footer">
         <div>
           <h3>À propos</h3>
-          <ul>
-            <li>Fonctionnement du site</li>
-            <li>Conditions générales</li>
-            <li>Données et confidentialité</li>
+          <ul class="footer__list">
+            <li class="footer__item">Fonctionnement du site</li>
+            <li class="footer__item">Conditions générales</li>
+            <li class="footer__item">Données et confidentialité</li>
           </ul>
         </div>
         <div>
           <h3>Nos hébergements</h3>
-          <ul>
-            <li>Charte qualité</li>
-            <li>Proposer votre hôtel</li>
+          <ul class="footer__list">
+            <li class="footer__item">Charte qualité</li>
+            <li class="footer__item">Proposer votre hôtel</li>
           </ul>
         </div>
         <div>
           <h3>Assistance</h3>
-          <ul>
-            <li>Centre d'aide</li>
-            <li>Nous contacter</li>
+          <ul class="footer__list">
+            <li class="footer__item">Centre d'aide</li>
+            <li class="footer__item">Nous contacter</li>
           </ul>
         </div>
       </footer>

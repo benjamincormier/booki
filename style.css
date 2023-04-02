@@ -9,6 +9,7 @@
   --light-grey-2: #d9d9d9;
 
   --shadow: 0 0.3rem 1.5rem rgba(0, 0, 0, 0.1);
+  --shadow-2: 0 0.6rem 3rem rgba(0, 0, 0, 0.07);
 }
 
 /**********************************************************************/
@@ -107,6 +108,7 @@ li {
 .offers-container--sponsored {
   /* flex: auto; */
   position: relative;
+  max-width: 42rem; /* pour test */
 }
 
 .offers-main-overview {
@@ -173,7 +175,7 @@ li {
   margin-bottom: 2rem;
 }
 
-.footer li:not(:last-child) {
+.footer__item:not(:last-child) {
   margin-bottom: 1.2rem;
 }
 
@@ -202,13 +204,13 @@ li {
   padding: 3rem 3.5rem;
   border-top: 2px solid #fff;
   transition: all 0.2s ease;
-  cursor: pointer; /*à transformer en button plutôt que de remettre cette property ? */
+  cursor: pointer; /* à transformer en button plutôt que de remettre cette property ? */
 }
 
-/* .nav__item:hover {
+.nav__item:hover {
   color: var(--booki-blue);
   border-top: 2px solid var(--booki-blue);
-} */
+}
 
 .nav__link:link,
 .nav__link:visited {
@@ -239,6 +241,10 @@ li {
 .search__input {
   outline: none;
   border: 1px solid var(--light-grey-1);
+}
+
+.search__input::placeholder {
+  color: #aeaeae;
 }
 
 .search__position {
@@ -291,6 +297,11 @@ li {
   display: flex;
   align-items: center;
   height: 5rem;
+  transition: background-color 0.2s ease;
+}
+
+.search__filter:hover {
+  background-color: var(--light-blue);
 }
 
 .search__filter > i {
@@ -299,10 +310,6 @@ li {
 
 .search__filter > span {
   margin-left: 1rem;
-}
-
-.search__filter--active {
-  background-color: var(--light-blue);
 }
 
 /**********
@@ -367,8 +374,13 @@ li {
 
 .card__price {
   font-size: 1.4rem;
+  /* white-space: nowrap; nécessaire pour text-overflow */
   font-weight: 400;
   margin-bottom: 0.5rem;
+  /* text-overflow: ellipsis; */
+  /* overflow: hidden; nécessaire pour text-overflow */
+  /* width: 100%; */
+  max-width: 100%;
 }
 
 .card__rating {
@@ -380,6 +392,8 @@ li {
 
 .card-sponsored {
   display: flex;
+  height: auto;
+  max-height: 16.6rem;
 }
 
 .card-sponsored .card__title {
@@ -389,7 +403,8 @@ li {
 .card-sponsored__image {
   padding: 5px 0 5px 5px;
   width: 13.7rem;
-  min-height: 14.4rem; /* min-height permet à l'image d'augmenter sa hauteur lorsque le titre passe sur plusieurs lignes sur des écrans plus petits  */
+  /* height: 14.4rem; min-height permet à l'image d'augmenter sa hauteur lorsque le titre passe sur plusieurs lignes sur des écrans plus petits  */
+  height: auto;
   object-fit: cover;
   border-radius: 20px 0 0 20px;
 }
@@ -433,6 +448,12 @@ h1.section-title {
 
 .activities-card {
   width: 22%;
+  transition: all 0.3s ease;
+}
+
+.activities-card:hover {
+  transform: translateY(-1rem) scale(1.03);
+  box-shadow: var(--shadow-2);
 }
 
 .activities-card__image {
@@ -466,6 +487,11 @@ h1.section-title {
     font-size: 56%;
   }
 
+  .nav__item:hover {
+    color: #000;
+    border-top: 2px solid #fff;
+  }
+
   .filters__bar > h4 {
     margin-right: 2rem;
   }
@@ -481,6 +507,10 @@ h1.section-title {
   .offers-container--main {
     width: 100%;
     margin-bottom: 5.3rem;
+  }
+
+  .offers-container--sponsored {
+    max-width: none; /* supprime la limite de 42rem / 420px mise sur version desktop */
   }
 
   .offers-container--sponsored > i {
@@ -536,12 +566,18 @@ h1.section-title {
 
   .nav {
     width: 100%;
+    margin-bottom: 2rem;
   }
 
   .nav__item {
-    padding: 3rem 3.5rem;
+    padding: 2rem 3.5rem;
     width: 50%;
     text-align: center;
+    border-bottom: 3px solid #fff;
+  }
+
+  .nav__item:first-child {
+    border-bottom: 3px solid var(--booki-blue);
   }
 
   /* Search */
@@ -559,7 +595,7 @@ h1.section-title {
   }
 
   .search__input {
-    /* empêche que la barre de saisie dépasse sur tous petits écrans, et max-width permet d'avoir au max la même taille que sur desktop */
+    /* empêche que la barre de saisie dépasse sur tout petits écrans, et max-width permet d'avoir au max la même taille que sur desktop */
     width: 100%;
     max-width: 22.4rem;
   }
@@ -609,7 +645,7 @@ h1.section-title {
   }
 
   .card {
-    /* Toutes les cards doivent maintenant occuper 100% de l'espace dispo */
+    /* Toutes les cards occupent maintenant 100% de l'espace dispo */
     width: 100%;
   }
 
