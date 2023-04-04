@@ -347,6 +347,10 @@ li {
   margin-bottom: 3rem;
 }
 
+#euro {
+  font-weight: 700;
+}
+
 /* Main */
 
 .card-main {
@@ -650,7 +654,7 @@ h1.section-title {
   }
 
   .offers-container--sponsored > i {
-    top: 2.5rem;
+    top: 3.4rem;
     right: 3rem;
   }
 
